@@ -2,7 +2,7 @@
   "name": "react-admin",
   "version": "0.0.1",
   "description": "React.js admin GUI for RESTful API",
-  "main": "index.js",
+  "main": "build/react-admin-standalone.min.js",
   "dependencies": {
     "react": "0.13.*",
     "react-router": "0.13.*"
