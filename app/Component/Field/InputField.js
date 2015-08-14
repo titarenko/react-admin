@@ -4,7 +4,15 @@ class InputField extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = { value: props.value ? props.value : null };
+        var value = props.value ? props.value : null;
+
+        // Custom rule added for attribute field 'value'.
+        // If You pass a function into defaultValue method of ra.field object,
+        // it will be executed each time React renders this input field
+        value = typeof props.value === 'function' ? props.value() : props.value;
+        // END OF CUSTOM RULE
+
+        this.state = { value: value };
     }
 
     onChange(e) {
@@ -14,6 +22,7 @@ class InputField extends React.Component {
     }
 
     render() {
+
         const attributes = {
             type: this.props.type ? this.props.type : 'text',
             value: this.state.value,
