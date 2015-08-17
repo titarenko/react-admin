@@ -9,7 +9,11 @@ class InputField extends React.Component {
         // Custom rule added for attribute field 'value'.
         // If You pass a function into defaultValue method of ra.field object,
         // it will be executed each time React renders this input field
-        value = typeof props.value === 'function' ? props.value() : props.value;
+        if (typeof value === 'function'){
+            value = value()
+        };
+        // value = typeof value === 'function' ? value() : value;
+        this.props.updateField(this.props.name, value);
         // END OF CUSTOM RULE
 
         this.state = { value: value };
