@@ -5,9 +5,9 @@ install:
 	@./node_modules/protractor/bin/webdriver-manager update
 	mkdir -p examples/blog/build/
 	mv node_modules/react-medium-editor node_modules/react-medium-editor_es6
-	./node_modules/babel/bin/babel/index.js node_modules/react-medium-editor_es6 --out-dir node_modules/react-medium-editor --stage 1 --compact false > /dev/null
+	./node_modules/babel/bin/babel.js node_modules/react-medium-editor_es6 --out-dir node_modules/react-medium-editor --stage 1 --compact false > /dev/null
 	mv node_modules/admin-config node_modules/admin-config_es6
-	./node_modules/babel/bin/babel/index.js node_modules/admin-config_es6 --out-dir node_modules/admin-config --stage 1 --compact false > /dev/null
+	./node_modules/babel/bin/babel.js node_modules/admin-config_es6 --out-dir node_modules/admin-config --stage 1 --compact false > /dev/null
 	rm -rf node_modules/react-medium-editor_es6
 	rm -rf node_modules/admin-config_es6
 
@@ -34,7 +34,7 @@ stop-test-server: test-server.PID
 run-test-e2e: start-test-server test-e2e stop-test-server
 
 test-unit-init:
-	./node_modules/babel/bin/babel/index.js app --out-dir src --stage 1 --compact false > /dev/null
+	./node_modules/babel/bin/babel.js app --out-dir src --stage 1 --compact false > /dev/null
 
 test-unit-clean:
 	rm -rf ./src
