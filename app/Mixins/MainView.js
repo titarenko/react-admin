@@ -41,14 +41,14 @@ export function onLoadFailure(error) {
         return;
     }
 
-    this.onFailure(error, 'read');
+    onFailure(error, 'read');
 }
 
 export function onSendFailure(error) {
-    this.onFailure(error, 'write');
+    onFailure(error, 'write');
 }
 
-export function onFailure(error, requestType='read') {
+function onFailure(error, requestType='read') {
     if (console) {
         console.error(error);
     }
