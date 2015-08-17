@@ -1,6 +1,6 @@
 {
   "name": "react-admin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React.js admin GUI for RESTful API",
   "main": "build/react-admin-standalone.min.js",
   "dependencies": {
