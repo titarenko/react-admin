@@ -114,6 +114,8 @@ Concatenate and minify the app with:
 make build
 ```
 
+**Warning! `make install` should be called (first time, after you've cloned repo) before this command!**
+
 All build files will then be updated and minified, ready for production.
 
 ## Testing
